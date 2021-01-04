@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Auto Refresh Lite",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "20": "icons/icon-20.png",
+    "24": "icons/icon-24.png",
+    "32": "icons/icon-128.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "128": "icons/icon-128.png",
+    "256": "icons/icon-256.png",
+    "512": "icons/icon-512.png"
+  },
+  "version": "2.0",
+  "author": "pragmatechdev",
+  "short_name": "Auto Refresh Lite",
+  "description": "Auto Refresh Lite refreshes a list of URLs at a set time interval.",
+  "options_page": "options/options.html",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "20": "icons/icon-20.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  }
+}
