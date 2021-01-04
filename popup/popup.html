@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/spectre.css@0.5.9/dist/spectre-icons.min.css,npm/spectre.css@0.5.9">
+  <script type="text/javascript" src="popup.js"></script>
+
+  <style>
+    #popup-content {
+      max-width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="popup-content" class="container my-2 px-2">
+    <!-- logo -->
+    <img src="../icons/icon-64.png" class="img-responsive my-2" style="margin: 0 auto;" height="64" alt="Logo">
+    <div style="padding-top: 0.3rem; padding-bottom: 0.3rem;">
+      <div class="divider"></div>
+    </div>
+    <!-- info -->
+    <dl>
+      <dt>Total Reloads:</dt>
+      <dd id="label-total-reloads">-</dd>
+
+      <dt>Remaining Reloads:</dt>
+      <dd id="label-remaining-reloads">-</dd>
+
+      <dt>Total URLs:</dt>
+      <dd id="label-total-urls">-</dd>
+
+      <dt>Timer (seconds):</dt>
+      <dd id="label-timer">-</dd>
+    </dl>
+    
+    <!-- buttons -->
+    <button type="button" class="btn btn-sm btn-block btn-primary my-1" id="btn-add-current-page">
+      <i class="icon icon-plus"></i>
+      Add current page to list
+    </button>
+    <button type="button" class="btn btn-sm btn-block btn-primary my-1" id="btn-open-options">
+      <i class="icon icon-apps"></i>
+      Options
+    </button>
+    <div class="columns my-1">
+      <div class="column col-6">
+        <button type="button" class="btn btn-sm btn-block btn-success" id="btn-start">
+          <i class="icon icon-check"></i>
+          Start
+        </button>
+      </div>
+      <div class="column col-6">
+        <button type="button" class="btn btn-sm btn-block btn-error" id="btn-stop">
+          <i class="icon icon-stop"></i>
+          Stop
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

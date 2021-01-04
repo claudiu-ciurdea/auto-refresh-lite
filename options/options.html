@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/spectre.css@0.5.9/dist/spectre-icons.min.css,npm/spectre.css@0.5.9">
+  <script type="text/javascript" src="options.js"></script>
+  <link rel="icon" type="image/png" href="../icons/icon-20.png"/>
+  <style>
+    body {
+      background-color: whitesmoke;
+    }
+
+    #main-content {
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 10px;
+      background-color: white;
+    }
+    .fadeIn {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 1s;
+    }
+    .fadeOut {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .title {
+      color: #616e7d;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="mt-2" id="main-content" >
+    <div class="container px-1 py-2">
+      <h1 class="text-center title">
+        Auto Refresh Lite Options
+      </h1>
+
+      <form class="px-2">
+        <!-- extension settings -->
+        <div class="text-large text-bold">Settings</div>
+        <div class="form-group" style="max-width: 400px;">
+          <label class="form-label" for="input-total-reloads">Total Number of Reloads</label>
+          <input class="form-input" type="number" step="1" min="1" id="input-total-reloads">
+          <label class="form-label" for="input-timer-interval">Seconds Between Reloads</label>
+          <input class="form-input" type="number" step="1" min="1" id="input-timer-interval">
+        </div>
+
+        <!-- urls -->
+        <div style="padding-top: 0.7rem; padding-bottom: 0.7rem;">
+          <div class="divider"></div>
+        </div>
+        <div class="text-large text-bold">Your URL List</div>
+        <div class="toast toast-warning">
+          <div class="text-bold">Note:</div>
+          <div>URLs must start with http:// or https://</div>
+          <div>When importing URLs from a file, please use one url per line.</div>
+        </div>
+
+        <div id="urls">
+        </div>
+
+        <div class="my-2">
+          <button type="button" class="btn btn-primary" id="btn-url-add-new">
+            <i class="icon icon-plus"></i>
+            Add new URL
+          </button>
+          <button type="button" class="btn btn-error" id="btn-url-clear-all">
+            <i class="icon icon-delete"></i>
+            Clear All URLs
+          </button>
+        </div>
+
+        <div class="my-2">
+          <input type="file" class="d-none" id="input-file">
+          <button type="button" class="btn" id="btn-url-import">
+            <i class="icon icon-upload"></i>
+            Import URLs from file
+          </button>
+          <button type="button" class="btn" id="btn-url-export">
+            <i class="icon icon-download"></i>
+            Export URLs to file
+          </button>
+        </div>
+
+        <!-- save buttons -->
+        <div style="padding-top: 0.7rem; padding-bottom: 0.3rem;">
+          <div class="divider"></div>
+        </div>
+
+        <div class="toast toast-success mb-2 fadeOut" id="save-notification">
+          <button type="button" class="btn btn-clear float-right" id="save-notification-button"></button>
+          The options have been saved!
+        </div>
+
+        <div class="columns">
+          <div class="column col-6">
+            <button type="button" class="btn btn-block btn-success" id="btn-options-save">
+              <i class="icon icon-check"></i>
+              Save Options
+            </button>
+          </div>
+          <div class="column col-6">
+            <button type="reset" class="btn btn-block btn-error" id="btn-options-reset">
+              <i class="icon icon-refresh"></i>
+              Reset Options
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
