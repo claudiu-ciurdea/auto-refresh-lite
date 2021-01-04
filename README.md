@@ -1,2 +1,7 @@
-# refresh-list
-Chrome extension that creates and refreshes a list of URLs at a set interval
+# Auto Refresh Lite
+Auto Refresh Lite is a chrome extension that refreshes a list of URLs at a set time interval.
+
+Features:
+* Easy to use and setup
+* No unnecessarry permissions required
+* Doesn't track you

@@ -1,0 +1,25 @@
+{
+  "name": "auto-refresh-lite",
+  "version": "2.0.0",
+  "description": "Auto Refresh Lite is a chrome extension that refreshes a list of URLs at a set time interval.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pragmatechdev/auto-refresh-lite.git"
+  },
+  "keywords": [],
+  "author": "pragmatechdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pragmatechdev/auto-refresh-lite/issues"
+  },
+  "homepage": "https://github.com/pragmatechdev/auto-refresh-lite#readme",
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
