@@ -50,7 +50,7 @@ function addNewItem() {
   addItem(lastNumberUsed, '');
 }
 
-function clearAll() {
+function clearAllUrls() {
   const parent = document.getElementById('urls');
   while (parent.firstElementChild) {
     parent.firstElementChild.remove();
@@ -184,13 +184,16 @@ window.addEventListener('load', () => {
   restoreOptions();
 
   document.getElementById('btn-url-add-new').addEventListener('click', addNewItem);
-  document.getElementById('btn-url-clear-all').addEventListener('click', clearAll);
+  document.getElementById('btn-url-clear-all').addEventListener('click', clearAllUrls);
   document.getElementById('btn-url-import').addEventListener('click', () => {
     document.getElementById('input-file').click();
   });
   document.getElementById('btn-url-export').addEventListener('click', exportUrls);
   document.getElementById('btn-options-save').addEventListener('click', saveOptions);
-  document.getElementById('btn-options-reset').addEventListener('click', restoreOptions);
+  document.getElementById('btn-options-reset').addEventListener('click', () => {
+    clearAllUrls();
+    restoreOptions();
+  });
   document.getElementById('input-file').addEventListener('change', handleFileImport);
   document.getElementById('save-notification-button').addEventListener('click', () => {
     const notification = document.getElementById('save-notification');
