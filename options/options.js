@@ -98,7 +98,7 @@ function exportUrls() {
     textForDownload = textForDownload.concat(input.value);
     textForDownload = textForDownload.concat('\n');
   });
-  download('auto-refresh-list.txt', textForDownload);
+  download('auto-refresh-lite.txt', textForDownload);
 }
 
 function saveOptions() {
@@ -139,19 +139,43 @@ function restoreOptions() {
   chrome.storage.sync.get('totalReloads', (data) => {
     if (data.totalReloads) {
       document.getElementById('input-total-reloads').value = data.totalReloads;
+    } else {
+      // make it compatible with the previous version where this key was called 'reloads'
+      chrome.storage.sync.get('reloads', (bkcompat) => {
+        if (bkcompat.reloads) {
+          document.getElementById('input-total-reloads').value = bkcompat.reloads;
+          chrome.storage.sync.set({
+            totalReloads: bkcompat.reloads,
+          });
+        }
+      });
+      // end backward compatible code here
     }
   });
 
   chrome.storage.sync.get('urlList', (data) => {
-    if (!data.urlList || data.urlList.length === 0) {
-      const x = getLastInputIdNumber();
-      if (x < 0) {
-        addItem(0, '');
-      }
-    } else {
+    if (data.urlList && data.urlList.length > 0) {
       for (let i = 0; i < data.urlList.length; i += 1) {
         addItem(i, data.urlList[i]);
       }
+    } else {
+      // make it compatible with the previous version where this key was called 'urls'
+      chrome.storage.sync.get('urls', (bkcompat) => {
+        if (bkcompat.urls && bkcompat.urls.length > 0) {
+          for (let i = 0; i < bkcompat.urls.length; i += 1) {
+            addItem(i, bkcompat.urls[i]);
+          }
+          chrome.storage.sync.set({
+            urlList: bkcompat.urls,
+          });
+          // end backward compatible code here, the else below should remain
+        } else {
+          const x = getLastInputIdNumber();
+          if (x < 0) {
+            addItem(0, '');
+          }
+        }
+      });
     }
   });
 }
