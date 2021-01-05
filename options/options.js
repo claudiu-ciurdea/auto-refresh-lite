@@ -147,6 +147,7 @@ function restoreOptions() {
           chrome.storage.sync.set({
             totalReloads: bkcompat.reloads,
           });
+          chrome.storage.sync.remove('reloads');
         }
       });
       // end backward compatible code here
@@ -168,6 +169,7 @@ function restoreOptions() {
           chrome.storage.sync.set({
             urlList: bkcompat.urls,
           });
+          chrome.storage.sync.remove('urls');
           // end backward compatible code here, the else below should remain
         } else {
           const x = getLastInputIdNumber();
