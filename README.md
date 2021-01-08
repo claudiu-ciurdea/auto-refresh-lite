@@ -3,5 +3,5 @@ Auto Refresh Lite is a chrome extension that refreshes a list of URLs at a set t
 
 Features:
 * Easy to use and setup
-* No unnecessarry permissions required
+* No unnecessary permissions required
 * Doesn't track you

@@ -14,8 +14,7 @@
   },
   "version": "2.0",
   "author": "pragmatechdev",
-  "short_name": "Auto Refresh Lite",
-  "description": "Auto Refresh Lite refreshes a list of URLs at a set time interval.",
+  "description": "Auto refresh a list of web pages after any number of seconds.",
   "options_page": "options/options.html",
   "permissions": [
     "storage",
